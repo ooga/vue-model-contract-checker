@@ -1,0 +1,41 @@
+{
+    "name": "vue-model-contract-checker",
+    "version": "0.1.0",
+    "description": "Statically analyze Vue codebase to enforce v-model contract (no regular props for model props)",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "bin": {
+        "check-vmodel": "dist/index.cjs",
+        "vue-model-contract-checker": "dist/index.cjs"
+    },
+    "scripts": {
+        "build": "mkdir -p dist && node esbuild.config.mjs",
+        "build:tsc": "tsc",
+        "lint": "yarn g:eslint --cache",
+        "check": "node dist/index.cjs",
+        "start": "node dist/index.cjs"
+    },
+    "keywords": [
+        "vue",
+        "v-model",
+        "linter",
+        "static-analysis"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@vue/compiler-dom": "3.5.13",
+        "@vue/compiler-sfc": "3.5.13",
+        "commander": "^12.0.0",
+        "glob": "^11.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24",
+        "esbuild": "^0.25.0",
+        "tsx": "^4.19.3",
+        "typescript": "^5.5.3"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ]
+}

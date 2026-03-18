@@ -1,0 +1,6 @@
+{
+  "include": ["src/**/*.vue"],
+  "exclude": ["**/node_modules/**", "**/dist/**", "**/coverage/**"],
+  "extensions": [".vue"],
+  "failOnError": true
+}
