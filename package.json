@@ -13,7 +13,8 @@
         "build:tsc": "tsc",
         "lint": "yarn g:eslint --cache",
         "check": "node dist/index.cjs",
-        "start": "node dist/index.cjs"
+        "start": "node dist/index.cjs",
+        "test": "node --test test/checker.test.mjs"
     },
     "keywords": [
         "vue",

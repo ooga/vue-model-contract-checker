@@ -36,6 +36,7 @@ From the **checker package** (paths relative to that package):
 ```bash
 cd packages/vue-model-contract-checker
 yarn build
+yarn test                                      # run tests (fixtures in test/fixtures/)
 yarn exec node dist/index.js ../webapp        # webapp only
 yarn exec node dist/index.js ../..           # whole repo
 ```
@@ -92,7 +93,14 @@ Resolution order: relative path → tsconfig paths → Vite alias. Non-relative 
 <MyComp v-model:title="foo" />
 ```
 
-To suppress a violation for the next line, add a comment on the preceding line that contains `vue-model-contract-checker-disable-next-line` (e.g. `<!-- vue-model-contract-checker-disable-next-line -->` in templates).
+To suppress checks for the **next** component opening (the line immediately below the comment), add a comment that contains `vue-model-contract-checker-disable-next-component` in the template:
+
+- **Disable all model props** for that usage (default):  
+  `<!-- vue-model-contract-checker-disable-next-component -->`
+- **Disable only listed props** (comma-separated, camelCase or kebab-case):  
+  `<!-- vue-model-contract-checker-disable-next-component:visible,title -->`
+
+Place the comment on the line directly above the component’s opening tag (multi-line tags are supported).
 
 ## Output format
 
