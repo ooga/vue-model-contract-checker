@@ -1,6 +1,6 @@
 {
     "name": "vue-model-contract-checker",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Statically analyze Vue codebase to enforce v-model contract (no regular props for model props)",
     "type": "module",
     "main": "dist/index.cjs",
